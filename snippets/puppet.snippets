@@ -86,13 +86,10 @@ snippet cron
 	cron {'${1:name}':
 	  command => '${2}',
 	  user    => '${3:root}',
-	  ${4}    => ${5}
 	}
 snippet exec
 	exec {'${1:name}':
 	  command => '${2:$1}',
-	  user    => '${3:root}',
-	  ${4}    => ${5}
 	}
 snippet user
 	user {'${1:user}':
