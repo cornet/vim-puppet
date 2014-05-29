@@ -96,31 +96,31 @@ snippet exec
 	}
 snippet user
 	user {'${1:user}':
-	  ensure      => present,
-	  comment     => '${2:$1}',
-	  managehome  => true,
-	  home        => '${3:/home/$1}'
+	  ensure     => present,
+	  comment    => '${2:$1}',
+	  managehome => true,
+	  home       => '${3:/home/$1}'
 	}
 snippet group
 	group {'${1:group}':
-	  ensure  => ${2:present}
+	  ensure => ${2:present}
 	}
 snippet host
 	host {'${1:hostname}':
-	  ip  => ${2:127.0.0.1}
+	  ip => ${2:127.0.0.1}
 	}
 snippet mailalias
 	mailalias {'${1:localpart}':
-	  recipient   => '${2:recipient}'
+	  recipient => '${2:recipient}'
 	}
 snippet mount
 	mount {'${1:destination path}':
-	  ensure  => ${2:mounted},
-	  device  => '${3:device name or path}'
+	  ensure => ${2:mounted},
+	  device => '${3:device name or path}'
 	}
 snippet package
 	package {'${1:package name}':
-	  ensure  => ${2:present}
+	  ensure => ${2:present}
 	}
 snippet yumrepo
 	yumrepo {'${1:repo name}':
@@ -133,11 +133,14 @@ snippet define
 	}
 snippet service
 	service {'${1:service}':
-	  ensure      => ${3:running},
-	  enable      => ${2:true},
-	  hasstatus   => true,
+	  ensure    => ${3:running},
+	  enable    => ${2:true},
+	  hasstatus => true,
 	}
 snippet file
 	file {'${1:path}':
-	  ${2}    => ${3}
+	  owner => '${2}',
+	  group => '${3}',
+	  mode  => '${4}',
+	  ${5}  => '${6}',
 	}
