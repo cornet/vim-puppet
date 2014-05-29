@@ -96,7 +96,7 @@ snippet exec
 	}
 snippet user
 	user {'${1:user}':
-	  ensure     => present,
+	  ensure     => 'present',
 	  comment    => '${2:$1}',
 	  managehome => true,
 	  home       => '${3:/home/$1}'
